@@ -16,7 +16,7 @@ public class BuscarReemplazar extends Application {
 	public void start(Stage primaryStage) {
 		try {
 
-			//Primera seccion
+			// Primera seccion
 			Text valor1 = new Text("Buscar:");
 			Text valor2 = new Text("Reemplazar con:");
 			VBox sec1 = new VBox();
@@ -43,18 +43,24 @@ public class BuscarReemplazar extends Application {
 
 			sec2.getChildren().addAll(valorabuscar, valorreemplazar, check1, check2);
 
-			//Segunda seccion
+			// Segunda seccion
 			Button buscar = new Button("Buscar");
 			Button reemplazar = new Button("Reemplazar");
 			Button reemplazartodo = new Button("Reemplazar todo");
 			Button cerrar = new Button("Cerrar");
 			Button ayuda = new Button("Ayuda");
 
+			buscar.setMaxWidth(Double.MAX_VALUE);
+			reemplazar.setMaxWidth(Double.MAX_VALUE);
+			reemplazartodo.setMaxWidth(Double.MAX_VALUE);
+			cerrar.setMaxWidth(Double.MAX_VALUE);
+			ayuda.setMaxWidth(Double.MAX_VALUE);
+			
 			VBox sec3 = new VBox();
 			sec3.setSpacing(5);
 			sec3.getChildren().addAll(buscar, reemplazar, reemplazartodo, cerrar, ayuda);
 
-			//Final
+			// Final
 			HBox root = new HBox();
 			root.setSpacing(10);
 			root.setAlignment(Pos.CENTER);
