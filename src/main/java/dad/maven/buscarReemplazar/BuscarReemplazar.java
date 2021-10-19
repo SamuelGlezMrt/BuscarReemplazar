@@ -49,36 +49,33 @@ public class BuscarReemplazar extends Application {
 		BuscarCheckBox = new CheckBox("Buscar hacia atrás");
 		ResaltarCheckBox = new CheckBox("Resaltar resultados");
 
-		HBox checkbox1 = new HBox();
+		VBox checkbox1 = new VBox();
 		checkbox1.setSpacing(5);
-		checkbox1.setAlignment(Pos.CENTER);
 		checkbox1.getChildren().addAll(mayusMinusCheckBox, ExpresionCheckBox);
 
-		HBox checkbox2 = new HBox();
+		VBox checkbox2 = new VBox();
 		checkbox2.setSpacing(5);
-		checkbox2.setAlignment(Pos.CENTER);
 		checkbox2.getChildren().addAll(BuscarCheckBox, ResaltarCheckBox);
 
 		HBox checkbox = new HBox();
+		checkbox.setSpacing(5);
 		checkbox.getChildren().addAll(checkbox1, checkbox2);
 
 		// Botones
 		BuscarButton = new Button("Buscar");
-		BuscarButton.setMaxWidth(80);
+		BuscarButton.setMaxWidth(100);
 		ReemplazarButton = new Button("Reemplazar");
-		ReemplazarButton.setMaxWidth(80);
+		ReemplazarButton.setMaxWidth(100);
 		ReemplazarTodoButton = new Button("Reemplazar todo");
-		ReemplazarTodoButton.setMaxWidth(80);
+		ReemplazarTodoButton.setMaxWidth(100);
 		CerrarButton = new Button("Cerrar");
-		CerrarButton.setMaxWidth(80);
+		CerrarButton.setMaxWidth(100);
 		AyudaButton = new Button("Ayuda");
-		AyudaButton.setMaxWidth(80);
+		AyudaButton.setMaxWidth(100);
 
 		VBox botonera = new VBox();
 		botonera.setSpacing(5);
-		botonera.setAlignment(Pos.CENTER);
 		botonera.getChildren().addAll(BuscarButton, ReemplazarButton, ReemplazarTodoButton, CerrarButton, AyudaButton);
-		botonera.setFillWidth(false);
 
 		GridPane root = new GridPane();
 		root.setPadding(new Insets(5));
@@ -90,11 +87,7 @@ public class BuscarReemplazar extends Application {
 		root.addColumn(1, checkbox);
 		root.addColumn(2, botonera);
 		GridPane.setRowSpan(botonera, 5);
-
-		/*BorderPane principal = new BorderPane();
-		principal.setPadding(new Insets(5));
-		principal.setCenter(root);*/
-		
+ 		
 		// Mostrar lineas
 		root.setGridLinesVisible(false);
 		
@@ -103,7 +96,6 @@ public class BuscarReemplazar extends Application {
 		root.getColumnConstraints().setAll(cols);
 
 		cols[1].setHgrow(Priority.ALWAYS);
-
 		
 		Scene scene = new Scene(root, 640, 480);
 		primaryStage.setTitle("Buscar y reemplazar");
