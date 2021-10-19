@@ -39,10 +39,7 @@ public class BuscarReemplazar extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-		// TexField y Label
-		BuscarLabel = new Label("Buscar:");
-		ReemplazarLabel = new Label("Reemplazar:");
-
+		// TexField		
 		BuscarText = new TextField();
 		ReemplazarText = new TextField();
 
@@ -87,15 +84,20 @@ public class BuscarReemplazar extends Application {
 		root.setPadding(new Insets(5));
 		root.setHgap(5);
 		root.setVgap(5);
+		
+		root.addRow(0, new Label("Buscar:"), BuscarText);
+		root.addRow(1, new Label("Reemplazar con:"), ReemplazarText);
+		root.addColumn(1, checkbox);
+		root.addColumn(2, botonera);
+		GridPane.setRowSpan(botonera, 5);
 
+		/*BorderPane principal = new BorderPane();
+		principal.setPadding(new Insets(5));
+		principal.setCenter(root);*/
+		
 		// Mostrar lineas
 		root.setGridLinesVisible(false);
-
-		root.addRow(0, new Label("Buscar:"), BuscarText);
-		root.addRow(1, new Label("Reemplazar:"), ReemplazarText);
-		root.addRow(2, new HBox(5, checkbox));
-		root.addColumn(2, botonera);
-
+		
 		// Restricciones
 		ColumnConstraints[] cols = { new ColumnConstraints(), new ColumnConstraints(), new ColumnConstraints() };
 		root.getColumnConstraints().setAll(cols);
