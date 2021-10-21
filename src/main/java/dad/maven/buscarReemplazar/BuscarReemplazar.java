@@ -97,7 +97,7 @@ public class BuscarReemplazar extends Application {
 
 		cols[1].setHgrow(Priority.ALWAYS);
 		
-		Scene scene = new Scene(root, 640, 480);
+		Scene scene = new Scene(root, 400, 320);
 		primaryStage.setTitle("Buscar y reemplazar");
 		primaryStage.setScene(scene);
 		primaryStage.show();
